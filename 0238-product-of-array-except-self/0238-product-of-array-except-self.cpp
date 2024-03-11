@@ -16,12 +16,10 @@ public:
         int answer = temp * nums[i + 1];
         temp = nums[i];
         nums[i] = answer;
+        start[i]*=nums[i];
     }
 
-    for (int i = 0; i < size; i++)
-    {
-        nums[i] = nums[i] * start[i];
-    }
- return nums;
+  
+ return start;
     }
 };
