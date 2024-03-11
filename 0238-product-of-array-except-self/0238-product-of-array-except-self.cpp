@@ -9,14 +9,12 @@ public:
     {
         start[i] = nums[i - 1] * start[i - 1];
     }
-    int temp = nums[size - 1];
-    nums[size - 1] = 1;
-    for (int i = size - 2; i >= 0; i--)
+    int temp = 1;
+    for (int i = size - 1; i >= 0; i--)
     {
-        int answer = temp * nums[i + 1];
-        temp = nums[i];
-        nums[i] = answer;
-        start[i]*=nums[i];
+     
+        start[i]*=temp;
+        temp*=nums[i];
     }
 
   
